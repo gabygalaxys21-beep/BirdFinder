@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bird Finder</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Bird Finder</h1>
+    <p>Enter a bird name to see which country it’s from, or enter a country name to see which birds live there.</p>
+
+    <form action="/search" method="POST">
+      <input type="text" name="query" placeholder="Enter bird or country" required>
+      <button type="submit">Search</button>
+    </form>
+
+    <% if (result) { %>
+      <div class="result success"><%= result %></div>
+      
+    <% } %>
+
+    <% if (error) { %>
+      <div class="result error"><%= error %></div>
+    <% } %>
+    
+  </div>
+  
+</body>
+</html>
